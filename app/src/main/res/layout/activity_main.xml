@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.MainActivity"
+    android:background="@color/purple_500">
+
+    <TextView
+        android:id="@+id/title_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:fontFamily="@font/bold"
+        android:includeFontPadding="false"
+        android:text="@string/title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_28ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.838"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/select_all"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:visibility="gone"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_select_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/cicon" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:visibility="gone"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintEnd_toStartOf="@+id/select_all"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/notedelete" />
+
+    <LinearLayout
+        android:id="@+id/layout_search"
+        android:background="@drawable/back_search"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingStart="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/title_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_search"
+            android:contentDescription="@string/app_name"
+            app:tint="@color/white" />
+
+        <EditText
+            android:id="@+id/input_text_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/regular"
+            android:background="@null"
+            android:imeOptions="actionDone"
+            android:hint="Search Notes"
+            android:includeFontPadding="false"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColorHint="@color/hint"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/show_notes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_but_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_search" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_but_action"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/purple_500"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <ImageView
+            android:id="@+id/more"
+            android:layout_weight="1"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_more"
+            app:tint="@color/cicon"
+            android:layout_marginStart="@dimen/_10sdp"/>
+        <ImageView
+            android:id="@+id/done"
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_done"
+            app:tint="@color/cicon"
+            android:layout_marginStart="@dimen/_10sdp"/>
+        <TextView
+            android:id="@+id/note_count"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="1"
+            android:contentDescription="@string/app_name"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="5 Notes"
+            android:textSize="@dimen/_15ssp"
+            android:fontFamily="@font/bold"
+            android:textAlignment="center"
+            android:textColor="@color/cicon"
+            />
+        <ImageView
+            android:id="@+id/but_add_note"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_weight="1"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_addn"
+            app:tint="@color/cicon"
+            android:layout_marginStart="@dimen/_10sdp"/>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

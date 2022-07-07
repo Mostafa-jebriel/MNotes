@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout_delete_note"
+    android:layout_gravity="center"
+    android:background="@drawable/delete_masseg"
+    android:layout_margin="@dimen/_10sdp"
+    >
+    <ImageView
+        android:id="@+id/but_delete"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:src="@drawable/ic_delete"
+        android:layout_margin="@dimen/_10sdp"
+        app:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/text_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Delete Note"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintStart_toEndOf="@id/but_delete"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Are you sure you want to delete this Note"
+        android:textAlignment="center"
+        android:paddingBottom="@dimen/_5sdp"
+        android:paddingStart="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        android:fontFamily="@font/regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/but_delete" />
+
+    <TextView
+        android:id="@+id/text_delete_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Note"
+        android:textAlignment="center"
+        android:textColor="@color/notedelete"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_sure" />
+
+    <TextView
+        android:id="@+id/text_cancel_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:text="cancel"
+        android:textAlignment="center"
+        android:textColor="@color/note4"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/text_delete_but"
+        app:layout_constraintTop_toBottomOf="@id/text_sure" />
+</androidx.constraintlayout.widget.ConstraintLayout>
